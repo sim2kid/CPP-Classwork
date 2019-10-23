@@ -1,0 +1,4 @@
+﻿  BrainTeaser.cpp
+c:\users\owen.ravelo\desktop\c++\week 8\c++\brainteaser\brainteaser\brainteaser.cpp(15): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+c:\users\owen.ravelo\desktop\c++\week 8\c++\brainteaser\brainteaser\brainteaser.cpp(19): warning C4244: '=': conversion from 'double' to '__int64', possible loss of data
+  BrainTeaser.vcxproj -> C:\Users\owen.ravelo\Desktop\C++\Week 8\C++\BrainTeaser\Debug\BrainTeaser.exe
