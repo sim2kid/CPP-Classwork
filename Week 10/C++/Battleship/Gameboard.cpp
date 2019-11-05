@@ -2,5 +2,7 @@
 #include <iostream>
 
 
-Gameboard::Gameboard() {
+Gameboard::Gameboard(int boardSize) {
+	size = boardSize;
+	
 }
