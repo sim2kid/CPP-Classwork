@@ -3,24 +3,47 @@
 
 #include "Gameboard.h"
 #include <iostream>
+#include <time.h>
+#include "Player.h"
 
 
 using std::cout;
 using std::cin;
+using std::endl;
 using std::string;
+
+void showBoardState(Gameboard a, Gameboard b);
 
 int main()
 {
-    
+	srand(time(NULL));
+	Gameboard b = Gameboard(50, 90);
+	Gameboard a = Gameboard(50, 90);
+	Player smart = Player();
+	Player dumb = Player();
+	int turns = 0;
+	while (!a.allSunk() && !b.allSunk()) {
+		if (turns % 2 == 0) {
+			smart.smartShoot(&b);
+		}
+		else if (turns % 2 == 1 && smart.turns -1 <= dumb.turns) {
+			dumb.simpleShoot(&a);
+		}
+		if (turns % 500 == 0) {
+			showBoardState(a, b);
+			cout << " " << smart.sunkShips() << " / " << b.getShips() << " Turns: " << smart.turns << endl;
+			cout << " " << dumb.sunkShips() << " / " << a.getShips() << " Turns: " << dumb.turns << endl;
+		}
+		
+		turns++;
+	}
+	showBoardState(a, b);
+	cout << " " << smart.sunkShips() << " / " << b.getShips() << " Turns: " << smart.turns << endl;
+	cout << " " << dumb.sunkShips() << " / " << a.getShips() << " Turns: " << dumb.turns << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+void showBoardState(Gameboard a, Gameboard b) {
+	cout << "---------------------\n";
+	a.display(true);
+	b.display(true);
+}

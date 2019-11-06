@@ -1,0 +1,3 @@
+﻿  Battleship.cpp
+C:\Users\2simm\Desktop\C++\Week 10\C++\Battleship\Battleship\Battleship.cpp(19,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Battleship.vcxproj -> C:\Users\2simm\Desktop\C++\Week 10\C++\Battleship\Debug\Battleship.exe
