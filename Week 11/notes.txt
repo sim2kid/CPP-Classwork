@@ -1,0 +1,36 @@
+Github Stuff
+
+Get SSH Key with
+cat /z//.ssh/id_rsa.pub
+
+// C:\Users\owen.ravelo\Desktop\C++\Week 11
+
+change to correct directory then do
+git clone <ssh link>
+
+git add <name file | . (for all)>
+
+
+Committing : 
+
+git commit -m "Message"
+
+Gotta have message -m for message flag
+
+
+Git Status:
+
+git status 
+tells us about the status of git
+
+git push origin master
+git push <> <branch>
+
+Branching:
+
+git checkout -b <name>
+
+
+Merging:
+
+git merge origin <Branch To Merge>
