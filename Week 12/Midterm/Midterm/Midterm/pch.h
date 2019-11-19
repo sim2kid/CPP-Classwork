@@ -9,6 +9,9 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include "Caluc.h"
+#include "State.h"
+#include "Brain.h"
 // TODO: add headers that you want to pre-compile here
 
 #endif //PCH_H

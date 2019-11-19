@@ -1,12 +1,38 @@
-// Midterm.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include "pch.h"
+#include "Caluc.h"
+#include "State.h"
+#include "Brain.h"
 #include <iostream>
+#include <string>
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	bool online = true;
+	Caluc c = Caluc();
+	
+	while (online) {
+		std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << std::endl;
+		std::cout << "Don't Use Spaces. Operations: +, -, *, /, %. Only Ints. a = Last Ans." << std::endl;
+		std::cout << "[u | un | undo] to undo. [r | re | redo] to redo." << std::endl;
+		std::cout << "> a = " << c.lastAns() << std::endl;
+		std::cout << std::endl;
+		std::cout << "> " << c.lastState().toString() << std::endl;
+		//std::cout << "Next > " << c.nextState().toString() << std::endl;
+		std::cout << std::endl;
+		std::string input = "";
+		std::cin >> input;
+		if (input == "u" || input == "un" || input == "undo") {
+			c.Undo();
+		}
+		else if (input == "r" || input == "re" || input == "redo") {
+			c.Redo();
+		}
+		else {
+			Brain b = Brain(input, c.lastAns());
+			State s = b.calculate();
+			c.Commit(s);
+		}
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
